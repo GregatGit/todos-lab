@@ -43,6 +43,7 @@ function MainList({ todos, todoDone, todoDelete }) {
     }
 
     setChecked(newChecked)
+    todoDone(name)
   }
 
   return (

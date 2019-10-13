@@ -1,4 +1,4 @@
-import { TODO_DELETE, TODO_DONE, TODO_ADD } from '../actions'
+import { TODO_DELETE, TODO_DONE_TOGGLE, TODO_ADD } from '../actions'
 
 const init = [
   { name: 'walk dog', done: false }, 
@@ -7,9 +7,15 @@ const init = [
 
 export default function(state = init, action) {
   switch (action.type) {
-    case TODO_DONE:
+    case TODO_DONE_TOGGLE:
       const doneState = [...state]
-      doneState[action.payload].done = true
+      
+      for (let i = 0; i < doneState.length; i++){
+        if (doneState[i].name === action.payload){
+          doneState[i].done = !doneState[i].done
+          return doneState
+        }
+      }
       return doneState
     case TODO_DELETE:
       const deleteState = [...state]

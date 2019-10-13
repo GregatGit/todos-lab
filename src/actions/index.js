@@ -1,4 +1,4 @@
-export const TODO_DONE = 'TODO_DONE'
+export const TODO_DONE_TOGGLE = 'TODO_DONE_TOGGLE'
 export const TODO_DELETE = 'TODO_DELETE'
 export const TODO_ADD = 'TODO_ADD'
 
@@ -10,10 +10,10 @@ export function todoAdd(name) {
   }
 }
 
-export function todoDone(index) {
+export function todoDone(name) {
   return {
-    type: TODO_DONE,
-    payload: index
+    type: TODO_DONE_TOGGLE,
+    payload: name
   }
 }
 
