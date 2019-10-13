@@ -24,7 +24,6 @@ function TopBar({ todos }) {
     color = 'secondary'
   }
   
-  console.log(countDone)
   return (
     <div  className={classes.root}>
       <AppBar color={color} position="static">
