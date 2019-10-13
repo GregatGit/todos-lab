@@ -46,7 +46,7 @@ function CreateTodo({ todoAdd }) {
           id="margin-none"
           defaultValue=""
           className={classes.textField}
-          helperText="Write you new todo"
+          helperText="Write a new todo"
           value={todo}
           variant="filled"
         />
