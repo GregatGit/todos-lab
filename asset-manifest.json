@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/todos-lab/static/js/main.44a7cf56.chunk.js",
+    "main.js.map": "/todos-lab/static/js/main.44a7cf56.chunk.js.map",
+    "runtime~main.js": "/todos-lab/static/js/runtime~main.738f3ace.js",
+    "runtime~main.js.map": "/todos-lab/static/js/runtime~main.738f3ace.js.map",
+    "static/js/2.bbbdec74.chunk.js": "/todos-lab/static/js/2.bbbdec74.chunk.js",
+    "static/js/2.bbbdec74.chunk.js.map": "/todos-lab/static/js/2.bbbdec74.chunk.js.map",
+    "index.html": "/todos-lab/index.html",
+    "precache-manifest.158a12fcd0c01a5161e99ccb263eb3d9.js": "/todos-lab/precache-manifest.158a12fcd0c01a5161e99ccb263eb3d9.js",
+    "service-worker.js": "/todos-lab/service-worker.js"
+  }
+}
