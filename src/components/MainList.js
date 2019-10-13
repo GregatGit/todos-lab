@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { todoDone, todoDelete } from '../actions'
-import CreateTodo from './CreateTodo'
+import CreateTodo from './CreateTodoA'
+import { Divider } from '@material-ui/core'
 
 const MainList = ({ todos, todoDone, todoDelete }) => {
 
@@ -29,6 +30,7 @@ const MainList = ({ todos, todoDone, todoDelete }) => {
     <div>
       <h2>List of Todos</h2>
       <ul>{showTodos(todos)}</ul>
+      <Divider />
       <CreateTodo />
     </div>
   )
