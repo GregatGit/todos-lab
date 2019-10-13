@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Typography } from '@material-ui/core/'
 
@@ -14,12 +15,19 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function TopBar() {
+function TopBar({ todos }) {
   const classes = useStyles()
 
+  const countDone = todos.filter(todo => !todo.done)
+  let color = 'primary'
+  if (todos.length === 0 || countDone.length === 0){
+    color = 'secondary'
+  }
+  
+  console.log(countDone)
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div  className={classes.root}>
+      <AppBar color={color} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             My Todo Lab
@@ -29,3 +37,11 @@ export default function TopBar() {
     </div>
   )
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    todos: state.todos
+  }
+}
+
+export default connect(mapStateToProps)(TopBar)
