@@ -4,6 +4,7 @@ import purple from '@material-ui/core/colors/purple'
 import green from '@material-ui/core/colors/green'
 
 import MainList from './components/MainList'
+import TopBar from './components/TopBar'
 
 const theme = createMuiTheme({
   palette: {
@@ -18,7 +19,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <h1>My Todo Lab</h1>
+      <TopBar />
       <MainList />
     </ThemeProvider>
   )
