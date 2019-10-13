@@ -12,9 +12,9 @@ import {
   Checkbox,
   IconButton,
   Divider,
+  Typography
 } from '@material-ui/core/'
 import DeleteIcon from '@material-ui/icons/Delete'
-import CommentIcon from '@material-ui/icons/Comment'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,6 +48,7 @@ function MainList({ todos, todoDone, todoDelete }) {
 
   return (
     <Fragment>
+    <Typography variant='h5'>The List</Typography>
       <List className={classes.root}>
         {todos.map(({name}, index) => {
           const labelId = `checkbox-list-label-${name}`

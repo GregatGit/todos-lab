@@ -29,7 +29,7 @@ function TopBar({ todos }) {
       <AppBar color={color} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            My Todo Lab
+            MY TODO LAB
           </Typography>
         </Toolbar>
       </AppBar>
