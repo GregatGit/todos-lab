@@ -1,6 +1,6 @@
 const tempData = [
-  { todo: 'walk dog', done: false }, 
-  { todo: 'build app', done: false }
+  { name: 'walk dog', done: false }, 
+  { name: 'build app', done: false }
 ]
 
 export default function(state = tempData, action) {
