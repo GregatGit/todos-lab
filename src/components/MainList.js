@@ -13,6 +13,7 @@ const MainList = ({ todos, todoDone, todoDelete }) => {
   }
 
   function showTodos(list) {
+    if (list.length === 0) return <li>Your list is empty</li>
     return list.map((todo, index) => {
       return (
         <li key={index}>
@@ -25,7 +26,7 @@ const MainList = ({ todos, todoDone, todoDelete }) => {
   }
   return (
     <div>
-      Main List
+      <h2>List of Todos</h2>
       <ul>{showTodos(todos)}</ul>
     </div>
   )
