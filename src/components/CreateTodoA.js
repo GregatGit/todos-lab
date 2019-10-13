@@ -16,10 +16,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function CreateTodo({ todoAdd }) {
+function CreateTodo({ todoAdd, todos }) {
   const classes = useStyles()
 
   const [todo, setTodo] = useState('')
+
+  const todoNames = todos.map(todo => todo.name)
+  console.log(todoNames)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -28,7 +31,13 @@ function CreateTodo({ todoAdd }) {
       alert('too small, must be 3 or more leters')
       return
     }
-    todoAdd(todo)
+    if (todoNames.indexOf(word) !== -1){
+      let message = `you already have ${word}`
+      alert(message)
+      setTodo('')
+      return
+    }
+    todoAdd(word)
     setTodo('')
   }
 
@@ -56,7 +65,13 @@ function CreateTodo({ todoAdd }) {
   )
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    todos: state.todos
+  }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { todoAdd }
 )(CreateTodo)
