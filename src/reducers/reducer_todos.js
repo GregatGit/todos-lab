@@ -1,5 +1,5 @@
 const tempData = [
-  { name: 'walk dog', done: false }, 
+  { name: 'walk dog', done: true }, 
   { name: 'build app', done: false }
 ]
 

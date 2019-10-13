@@ -5,8 +5,9 @@ const MainList = ({ todos }) => {
   function showTodos(list) {
     return list.map((todo, index) =>{
       return (<li key={index}>
-        {todo.name}
-        <button></button>
+        {todo.done ? <s>{todo.name}</s> : todo.name}
+        <button>DONE</button>
+        <button>DELETE</button>
         </li>)
     })
   }
