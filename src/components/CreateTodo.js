@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { todoAdd } from '../actions'
 
-const CreateTodo = () => {
+const CreateTodo = ({ todoAdd }) => {
   const [todo, setTodo] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('hi')
+    todoAdd(todo)
+    setTodo('')
   }
 
   const handleChange = e => {
@@ -16,7 +19,7 @@ const CreateTodo = () => {
     <div>
       <h2>Add Todo to your list</h2>
       <form onSubmit={handleSubmit}>
-      <label forhtml="name">Todo (4 to 8 characters):</label>
+      <label forhtml="name">Todo (3 to 20 characters):</label>
 
       <input onChange={handleChange} type="text" id="todo" name="todo" required
              minLength="3" maxLength="20" size="20" value={todo} />
@@ -26,4 +29,4 @@ const CreateTodo = () => {
   )
 }
 
-export default CreateTodo
+export default connect(null, { todoAdd })(CreateTodo)
