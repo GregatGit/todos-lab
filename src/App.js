@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Temp from './components/Temp'
+import MainList from './components/MainList'
 
 
 function App() {
   return (
     <div>
       My React-Redux App
-      <Temp />
+      <MainList />
     </div>
   )
 }
