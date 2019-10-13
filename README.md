@@ -3,7 +3,7 @@
 You can see it running [here](https://gregatgit.github.io/todos-lab/)
 This was practice to quickly set up a todo list with react, hooks and redux.
 
-I then implement Material-ui into the project.
+I then implemented Material-ui into the project.
 
 When there are no more todos on the list or they are all done the top bar turns green.
 
