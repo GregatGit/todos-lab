@@ -12,6 +12,10 @@ export default function(state = init, action) {
       const doneState = [...state]
       doneState[action.payload].done = true
       return doneState
+    case TODO_DELETE:
+      const deleteState = [...state]
+      deleteState.splice(action.payload, 1)
+      return deleteState
   
     default:
       return state
