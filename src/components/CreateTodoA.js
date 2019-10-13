@@ -22,7 +22,6 @@ function CreateTodo({ todoAdd, todos }) {
   const [todo, setTodo] = useState('')
 
   const todoNames = todos.map(todo => todo.name)
-  console.log(todoNames)
 
   const handleSubmit = e => {
     e.preventDefault()
