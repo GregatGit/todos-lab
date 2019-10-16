@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
   ListItem,
   ListItemIcon,
   ListItemSecondaryAction,
   ListItemText,
   Checkbox,
-  IconButton
+  IconButton,
 } from '@material-ui/core/'
 import DeleteIcon from '@material-ui/icons/Delete'
 
 const TheListItem = props => {
   const { name, checkedArr, labelId, index, handleDelete, handleToggle } = props
   return (
-    <div>
+    <Fragment>
       <ListItem
         key={name}
         role={undefined}
@@ -40,7 +40,7 @@ const TheListItem = props => {
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>
-    </div>
+    </Fragment>
   )
 }
 
