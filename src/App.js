@@ -3,7 +3,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import purple from '@material-ui/core/colors/purple'
 import green from '@material-ui/core/colors/green'
 
-import MainList from './components/MainListA'
+import MainList from './components/MainList'
 import TopBar from './components/TopBar'
 
 const theme = createMuiTheme({
