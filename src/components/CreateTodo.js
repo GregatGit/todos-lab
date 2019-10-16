@@ -18,9 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 function CreateTodo({ todoAdd, todos }) {
   const classes = useStyles()
-
   const [todo, setTodo] = useState('')
-
   const todoNames = todos.map(todo => todo.name)
 
   const handleSubmit = e => {

@@ -3,11 +3,7 @@ import { connect } from 'react-redux'
 import { todoDone, todoDelete } from '../actions'
 import CreateTodo from './CreateTodo'
 import { makeStyles } from '@material-ui/core/styles'
-import {
-  List,
-  Divider,
-  Typography,
-} from '@material-ui/core/'
+import { List, Divider, Typography } from '@material-ui/core/'
 import TheListItem from './TheListItem'
 
 const useStyles = makeStyles(theme => ({
