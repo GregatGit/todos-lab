@@ -5,16 +5,10 @@ import CreateTodo from './CreateTodo'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   List,
-  ListItem,
-  ListItemIcon,
-  ListItemSecondaryAction,
-  ListItemText,
-  Checkbox,
-  IconButton,
   Divider,
-  Typography
+  Typography,
 } from '@material-ui/core/'
-import DeleteIcon from '@material-ui/icons/Delete'
+import TheListItem from './TheListItem'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,38 +42,20 @@ function MainList({ todos, todoDone, todoDelete }) {
 
   return (
     <Fragment>
-    <Typography variant='h5'>The List</Typography>
+      <Typography variant="h5">The List</Typography>
       <List className={classes.root}>
-        {todos.map(({name}, index) => {
+        {todos.map(({ name }, index) => {
           const labelId = `checkbox-list-label-${name}`
-
           return (
-            <ListItem
+            <TheListItem
               key={name}
-              role={undefined}
-              dense
-              button
-              onClick={handleToggle(name)}
-            >
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(name) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={name} />
-              <ListItemSecondaryAction>
-                <IconButton
-                onClick={() => handleDelete(index)}
-                edge="end"
-                  aria-label="comments">
-                  <DeleteIcon />
-                </IconButton>
-              </ListItemSecondaryAction>
-            </ListItem>
+              name={name}
+              checkedArr={checked}
+              labelId={labelId}
+              index={index}
+              handleToggle={handleToggle}
+              handleDelete={handleDelete}
+            />
           )
         })}
       </List>
@@ -95,4 +71,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, { todoDone, todoDelete })(MainList)
+export default connect(
+  mapStateToProps,
+  { todoDone, todoDelete }
+)(MainList)
