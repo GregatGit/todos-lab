@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Typography } from '@material-ui/core/'
+import { AppBar, Toolbar, Typography, Badge } from '@material-ui/core/'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,19 +17,25 @@ const useStyles = makeStyles(theme => ({
 
 function TopBar({ todos }) {
   const classes = useStyles()
-
   const countDone = todos.filter(todo => !todo.done)
   let color = 'primary'
-  if (todos.length === 0 || countDone.length === 0){
+
+  if (todos.length === 0 || countDone.length === 0) {
     color = 'secondary'
   }
-  
+
   return (
-    <div  className={classes.root}>
+    <div className={classes.root}>
       <AppBar color={color} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            MY TODO LAB
+            <Badge
+              className={classes.padding}
+              color="secondary"
+              badgeContent={countDone.length}
+            >
+              MY TODO LAB
+            </Badge>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -39,7 +45,7 @@ function TopBar({ todos }) {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    todos: state.todos
+    todos: state.todos,
   }
 }
 
