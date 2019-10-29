@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
+    "firebase": "^7.2.1",
     "gh-pages": "^2.1.1",
     "promise": "^8.0.3",
     "react": "^16.10.2",
