@@ -9,7 +9,7 @@ It now downloads some tasks using firebase.
 
 The db is read only - just to stop anyone from sending thousands of todos.
 
-When there are no more todos on the list or they are all done the top bar turns green.
+When there are no more todos on the list or they are all done the top bar turns red.
 
 You can see it running [here](https://gregatgit.github.io/todos-lab/)
 
