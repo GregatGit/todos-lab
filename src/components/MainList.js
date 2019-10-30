@@ -1,10 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { todoDone, todoDelete } from '../actions'
 import CreateTodo from './CreateTodo'
 import { makeStyles } from '@material-ui/core/styles'
 import { List, Divider, Typography } from '@material-ui/core/'
 import TheListItem from './TheListItem'
+import OnLineTodos from './OnlineTodos'
+import firebase from '../firebase'
+
+// firebase.firestore().collection('todos').add({
+//   name: 'read book', done: false
+// })
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 function MainList({ todos, todoDone, todoDelete }) {
   const classes = useStyles()
-  const [checked, setChecked] = React.useState([0])
+  const [checked, setChecked] = useState([0])
 
   function handleDelete(index) {
     todoDelete(index)
