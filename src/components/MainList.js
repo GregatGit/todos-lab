@@ -6,11 +6,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import { List, Divider, Typography } from '@material-ui/core/'
 import TheListItem from './TheListItem'
 import OnLineTodos from './OnlineTodos'
-import firebase from '../firebase'
-
-// firebase.firestore().collection('todos').add({
-//   name: 'read book', done: false
-// })
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,6 +58,7 @@ function MainList({ todos, todoDone, todoDelete }) {
       </List>
       <Divider />
       <CreateTodo />
+      <OnLineTodos />
     </Fragment>
   )
 }
