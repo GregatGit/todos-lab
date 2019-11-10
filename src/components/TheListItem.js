@@ -10,7 +10,7 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete'
 
 const TheListItem = props => {
-  const { name, checkedArr, labelId, index, handleDelete, handleToggle, done } = props
+  const { name, labelId, index, handleDelete, handleToggle, done } = props
   return (
     <Fragment>
       <ListItem
