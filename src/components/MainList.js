@@ -38,18 +38,20 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
   }
   const handleToggleAll = () =>{
     toggleAll()
+
   }
 
   return (
     <Fragment>
       <Typography variant="h5">The List</Typography>
       <List className={classes.root}>
-        {todos.map(({ name }, index) => {
+        {todos.map(({ name, done }, index) => {
           const labelId = `checkbox-list-label-${name}`
           return (
             <TheListItem
               key={name}
               name={name}
+              done={done}
               checkedArr={checked}
               labelId={labelId}
               index={index}

@@ -10,7 +10,7 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete'
 
 const TheListItem = props => {
-  const { name, checkedArr, labelId, index, handleDelete, handleToggle } = props
+  const { name, checkedArr, labelId, index, handleDelete, handleToggle, done } = props
   return (
     <Fragment>
       <ListItem
@@ -23,7 +23,7 @@ const TheListItem = props => {
         <ListItemIcon>
           <Checkbox
             edge="start"
-            checked={checkedArr.indexOf(name) !== -1}
+            checked={done}
             tabIndex={-1}
             disableRipple
             inputProps={{ 'aria-labelledby': labelId }}
