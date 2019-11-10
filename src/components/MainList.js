@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { todoDone, todoDelete, toggleAll } from '../actions'
 import CreateTodo from './CreateTodo'
@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
 
 function MainList({ todos, todoDone, todoDelete, toggleAll }) {
   const classes = useStyles()
-  const [checked, setChecked] = useState([0])
 
   function handleDelete(index) {
     todoDelete(index)
@@ -29,7 +28,6 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
 
   const handleToggleAll = () =>{
     toggleAll()
-
   }
 
   return (
@@ -43,7 +41,6 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
               key={name}
               name={name}
               done={done}
-              checkedArr={checked}
               labelId={labelId}
               index={index}
               handleToggle={handleToggle}
