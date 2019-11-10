@@ -1,9 +1,9 @@
 import React, { useState, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { todoDone, todoDelete } from '../actions'
+import { todoDone, todoDelete, toggleAll } from '../actions'
 import CreateTodo from './CreateTodo'
 import { makeStyles } from '@material-ui/core/styles'
-import { List, Divider, Typography } from '@material-ui/core/'
+import { List, Divider, Typography, Button } from '@material-ui/core/'
 import TheListItem from './TheListItem'
 import OnLineTodos from './OnlineTodos'
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function MainList({ todos, todoDone, todoDelete }) {
+function MainList({ todos, todoDone, todoDelete, toggleAll }) {
   const classes = useStyles()
   const [checked, setChecked] = useState([0])
 
@@ -35,6 +35,9 @@ function MainList({ todos, todoDone, todoDelete }) {
 
     setChecked(newChecked)
     todoDone(name)
+  }
+  const handleToggleAll = () =>{
+    toggleAll()
   }
 
   return (
@@ -56,6 +59,7 @@ function MainList({ todos, todoDone, todoDelete }) {
           )
         })}
       </List>
+      <Button onClick={handleToggleAll}>Toggle All</Button>
       <Divider />
       <CreateTodo />
       <OnLineTodos />
@@ -71,5 +75,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
   mapStateToProps,
-  { todoDone, todoDelete }
+  { todoDone, todoDelete, toggleAll }
 )(MainList)

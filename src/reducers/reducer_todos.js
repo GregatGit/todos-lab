@@ -1,4 +1,4 @@
-import { TODO_DELETE, TODO_DONE_TOGGLE, TODO_ADD } from '../actions'
+import { TODO_DELETE, TODO_DONE_TOGGLE, TODO_ADD, TOGGLE_ALL } from '../actions'
 
 const init = [
   { name: 'walk dog', done: false }, 
@@ -24,6 +24,11 @@ export default function(state = init, action) {
     
     case TODO_ADD:
       return [...state, action.payload]
+    
+    case TOGGLE_ALL:
+      const toggledState = [...state]
+      toggledState.forEach(todo => todo.done = true)
+      return toggledState
 
     default:
       return state
