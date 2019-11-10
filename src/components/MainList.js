@@ -24,18 +24,9 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
   }
 
   const handleToggle = name => () => {
-    const currentIndex = checked.indexOf(name)
-    const newChecked = [...checked]
-
-    if (currentIndex === -1) {
-      newChecked.push(name)
-    } else {
-      newChecked.splice(currentIndex, 1)
-    }
-
-    setChecked(newChecked)
     todoDone(name)
   }
+
   const handleToggleAll = () =>{
     toggleAll()
 
