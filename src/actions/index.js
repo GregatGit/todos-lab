@@ -3,9 +3,10 @@ export const TODO_DELETE = 'TODO_DELETE'
 export const TODO_ADD = 'TODO_ADD'
 export const TOGGLE_ALL = 'TOGGLE_ALL'
 
-export function toggleAll() {
+export function toggleAll(done) {
   return {
-    type: TOGGLE_ALL
+    type: TOGGLE_ALL,
+    payload: done
   }
 }
 

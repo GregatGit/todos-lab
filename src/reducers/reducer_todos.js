@@ -27,7 +27,7 @@ export default function(state = init, action) {
     
     case TOGGLE_ALL:
       const toggledState = [...state]
-      toggledState.forEach(todo => todo.done = true)
+      toggledState.forEach(todo => todo.done = action.payload)
       return toggledState
 
     default:

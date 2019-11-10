@@ -27,7 +27,13 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
   }
 
   const handleToggleAll = () =>{
-    toggleAll()
+    const countDone = todos.filter(todo => !todo.done)
+    let done = true
+  
+    if (todos.length === 0 || countDone.length === 0) {
+      done = false
+    }
+    toggleAll(done)
   }
 
   return (
