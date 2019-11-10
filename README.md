@@ -8,7 +8,7 @@ I then implemented Material-ui into the project.
 
 It now downloads some tasks using firebase. 
 
-The db is read only - just to stop anyone from sending thousands of todos.
+For security the db is read only.
 
 When there are no more todos on the list or they are all done the top bar turns red.
 
