@@ -55,7 +55,7 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
           )
         })}
       </List>
-      <Button onClick={handleToggleAll}>Toggle All</Button>
+      <Button variant="outlined" color="primary" onClick={handleToggleAll}>Toggle All</Button>
       <Divider />
       <CreateTodo />
       <OnLineTodos />
