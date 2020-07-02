@@ -26,10 +26,10 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
     todoDone(name)
   }
 
-  const handleToggleAll = () =>{
+  const handleToggleAll = () => {
     const countDone = todos.filter(todo => !todo.done)
     let done = true
-  
+
     if (todos.length === 0 || countDone.length === 0) {
       done = false
     }
@@ -55,7 +55,9 @@ function MainList({ todos, todoDone, todoDelete, toggleAll }) {
           )
         })}
       </List>
-      <Button variant="outlined" color="primary" onClick={handleToggleAll}>Toggle All</Button>
+      <Button variant="outlined" color="primary" onClick={handleToggleAll}>
+        Toggle All
+      </Button>
       <Divider />
       <CreateTodo />
       <OnLineTodos />
@@ -69,7 +71,6 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  { todoDone, todoDelete, toggleAll }
-)(MainList)
+export default connect(mapStateToProps, { todoDone, todoDelete, toggleAll })(
+  MainList
+)

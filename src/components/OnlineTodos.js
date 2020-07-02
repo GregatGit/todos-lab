@@ -21,6 +21,7 @@ const OnlineTodos = ({ todoAdd }) => {
           id: doc.id,
           ...doc.data()
         }))
+        console.log(newTodos)
         newTodos.forEach(todo => todoAdd(todo.name))
         setLoaded(true)
       })
